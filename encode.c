@@ -6,8 +6,8 @@ int sunCode(char letter);
 int main(){
     char inputString[100];
     char splitStrings[10][10];
-    int i,j,count;
-
+    long unsigned int j,count;
+    long unsigned int i;
     printf("Enter the message.\n");
     fgets(inputString, 100, stdin);
     j=count=0;
@@ -33,7 +33,7 @@ int main(){
 int splitWord(char* word, int count){
     int i;
     int strLength=strlen(word);
-    for (i=0; i<=(strLength-1); i++){ //-1 because the length is calculated 1 more (space because we're using fgets instead of the deprecated one
+    for (i=0; i<=count; i++){
         sunCode(word[i]);
 //        printf("%c\n",word[i]);
     }
@@ -41,7 +41,7 @@ int splitWord(char* word, int count){
 }
 int sunCode(char letter){
     char letr = tolower(letter);
-    int code=0,code1;
+    int code;
     switch (letr){
         case '0':
             code=0;
@@ -151,10 +151,106 @@ int sunCode(char letter){
         case 'z':
             code=10011;
             break;
+        case "'":
+            code=10100;
+            break;
+        case '"':
+            code=10101;
+            break;
+        case ':':
+            code=10110;
+            break;
+        case ';':
+            code=10111;
+            break;
+        case '?':
+            code=11000;
+            break;
+        case '/':
+            code=11001;
+            break;
+        case '\':
+            code=11010;
+            break;
+        case '.':
+            code=11011;
+            break;
+        case ',':
+            code=11100;
+            break;
+        case '<':
+            code=11101;
+            break;
+        case '>':
+            code=11110;
+            break;
+        case '!':
+            code=11111;
+            break;
+        case '@':
+            code=100000;
+            break;
+        case '#':
+            code=100001;
+            break;
+        case '$':
+            code=1000101;
+            break;
+        case '%':
+            code=1000110;
+            break;
+        case '^':
+            code=1000111;
+            break;
+        case '&':
+            code=1001000;
+            break;
+        case '*':
+            code=1001001;
+            break;
+        case '(':
+            code=1001010;
+            break;
+        case ')':
+            code=1001011;
+            break;
+        case '-':
+            code=1001100;
+            break;
+        case '_':
+            code=1001101;
+            break;
+        case '+':
+            code=1001110;
+            break;
+        case '=':
+            code=1001111;
+            break;
+        case '|':
+            code=1010000;
+            break;
+        case '{':
+            code=1010001;
+            break;
+        case '}':
+            code=1010010;
+            break;
+        case '[':
+            code=1010011;
+            break;
+        case ']':
+            code=1010100;
+            break;
+        case '~':
+            code=1010101;
+            break;
+        case '`':
+            code=1010110;
+            break;
         case ' ':
-            code=45;
+            code=1010111;
             printf("\nis space\n");
             break;
     }
-    printf("%07d ",code);
+    printf("%08d",code);
 }
