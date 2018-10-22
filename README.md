@@ -1,8 +1,10 @@
 # sunCode
 
 The following is the scheme(I guess that's the right terminology) for sunCode:
+
   1)All alphabets are taken in lower case
   the code:
+	
     0: 0
     1: 1
     2: 10
